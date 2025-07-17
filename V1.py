@@ -399,32 +399,73 @@ def main():
 
         for epoch in range(
             
-            1, num_epochs+1):
+            1,
+            
+            num_epochs+1
+            
+            ):
             
             print(f'\nEpoch {epoch}/{num_epochs}')
             
             train_loss, train_acc = train_one_epoch(
-                model, train_loader, criterion, optimizer, device)
+
+                model, 
+
+                train_loader, 
+
+                criterion, 
+
+                optimizer, 
+
+                device
+                
+                )
+            
             val_loss, val_acc = validate(
-                model, val_loader, criterion, device)
+                
+                model, 
+                
+                val_loader, 
+
+                criterion, 
+
+                device
+                
+                )
 
             print(f'  Train loss: {train_loss:.4f}  acc: {train_acc:.4f}')
             print(f'  Val   loss: {val_loss:.4f}  acc: {val_acc:.4f}')
 
-            writer.writerow([epoch,
+            writer.writerow(
+                
+                [epoch,
+                 
                              f'{train_loss:.4f}', f'{train_acc:.4f}',
-                             f'{val_loss:.4f}', f'{val_acc:.4f}'])
+                             f'{val_loss:.4f}', f'{val_acc:.4f}'
+                             
+                ])
+            
             csvfile.flush()
 
             # save best immediately
             if val_acc > best_acc:
+
                 best_acc = val_acc
-                torch.save(model.state_dict(), 'shufflenet_v2_x0_5_svhn_best.pth')
+
+                torch.save(
+                    
+                    model.state_dict(), 
+                    
+                    'shufflenet_v2_x0_5_svhn_best.pth'
+                    
+                    )
+                
                 print(f'  ▶ New best model saved (val_acc={best_acc:.4f})')
 
             scheduler.step()
 
         elapsed = time.time() - since
+        
         print(f'\nTraining complete in {elapsed//60:.0f}m {elapsed%60:.0f}s')
         print(f'Best validation accuracy: {best_acc:.4f}')
         print(f'Checkpointed best model to shufflenet_v2_x0_5_svhn_best.pth')
