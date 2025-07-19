@@ -194,3 +194,13 @@ The training progress for both models is saved in CSV format:
 ---
 
 **P.S.** - The models are pre-trained and ready to use. The web application will automatically download the SVHN dataset on first run if not already present.
+
+#### This is part of Shipwrecked
+
+<div align="center">
+  <a href="https://shipwrecked.hackclub.com/?t=ghrm" target="_blank">
+    <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/739361f1d440b17fc9e2f74e49fc185d86cbec14_badge.png" 
+         alt="This project is part of Shipwrecked, the world's first hackathon on an island!" 
+         style="width: 70%;">
+  </a>
+</div>
