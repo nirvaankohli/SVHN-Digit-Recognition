@@ -67,7 +67,7 @@ def detect_number_regions(
 
     for bbox, text, conf in results:
 
-        if text.isdigit() and conf >= min_conf:
+        if text.isdigit() and float(conf )>= min_conf:
 
             pts = np.array(bbox).reshape(-1,2)
 

@@ -39,7 +39,7 @@ def get_data_loaders(
 
         T.Normalize(mean, std),
 
-        T.RandomErasing(p=0.5, value='random'),
+        T.RandomErasing(p=0.5),
 
     ])
 
