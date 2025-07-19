@@ -20,25 +20,6 @@ st.set_page_config(
 
 )
 
-# --- CUSTOM CSS TO WIDEN SIDEBAR -------------------------------------------
-
-st.markdown("""
-            
-    <style>
-    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-        width: 350px;
-    }
-    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
-        width: 350px;
-        margin-left: -350px;
-    }
-    </style>
-""", 
-
-unsafe_allow_html=True
-
-)
-
 # --- DEFAULTS & SESSION STATE ----------------------------------------------
 DEFAULTS = {
 
