@@ -187,15 +187,52 @@ def main():
              """)
 
     # slider to tweak confidence threshold
+
     min_conf = st.slider(
-        "Min OCR confidence", 0.1, 0.99, 0.6, 0.05)
+
+            "Min OCR confidence", 
+            
+            0.1, 
+
+            0.99, 
+
+            0.6, 
+            
+            0.05
+        
+        )
     
-    uploaded = st.file_uploader("Choose a JPG/PNG image", type=["jpg","jpeg","png"])
+    uploaded = st.file_uploader(
+        
+        "Choose a JPG/PNG image", 
+        
+        type=[
+            
+            "jpg",
+
+            "jpeg",
+            
+            "png"
+
+            ]
+
+        )
+    
     if not uploaded:
+
         return
 
-    img_arr = np.frombuffer(uploaded.read(), dtype=np.uint8)
-    img = cv2.imdecode(img_arr, cv2.IMREAD_COLOR)
+    img_arr = np.frombuffer(
+
+        uploaded.read(), 
+
+        dtype=np.uint8
+
+        )
+    
+    img = cv2.imdecode(
+        
+        img_arr, cv2.IMREAD_COLOR)
 
     st.subheader("Original Image")
     st.image(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), use_column_width=True)
